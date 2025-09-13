@@ -1,0 +1,8 @@
+<ul>
+  @for (message of messages$ | async; track message) { 
+    <li>{{ message }}</li> 
+  }
+  <!-- removed () from messages cuz we are not using signals anymore -->
+</ul>
+
+<p class="debug-output">{{ debugOutput }}</p>
