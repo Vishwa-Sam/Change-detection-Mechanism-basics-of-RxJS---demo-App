@@ -1,27 +1,56 @@
-# ChangeDetectionDeepDive
+# Demo App: Change Detection, Signals, & RxJS
+This demo app is built to explain how Angular's change detection mechanism works, what it means to go zoneless (removing dependency on zone.js), how to implement state using signals only, and showcase basic RxJS integration.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+---
 
-## Development server
+## Features
+Increment and decrement counter buttons with instant feedback
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Counter resets to 0 automatically after 4 seconds
 
-## Code scaffolding
+An input box for entering messages; multiple messages can be displayed
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+All state managed via Angular signals
 
-## Build
+Reactive updates with no zone.js, demonstrating a zoneless architecture
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Simple RxJS logic
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Core Concepts
+Change Detection Mechanism
+The app demonstrates how Angular binds state to its templates and efficiently updates views by reacting to changes—specifically, how signals enable fine-grained, targeted change detection without traversing the entire component tree.
 
-## Running end-to-end tests
+Zoneless Angular
+This project is configured to work without relying on zone.js for automatic change detection. Instead, signals are used for local, granular state updates and view refreshes.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Signals-Only State
+All reactive state (counter, messages) is handled using Angular's new signal API, making the app lightweight and performant with clear, straightforward update logic.
 
-## Further help
+Basic RxJS Use
+RxJS timers are used to display text outputs, showing how to use Observables for asynchronous operations in Angular.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## How It Works
+The counter can be incremented or decremented with dedicated buttons.
+
+After four seconds, the counter value resets—this uses an RxJS timer triggered on change.
+
+Enter any message in the input box; submitted messages appear in a list.
+
+You can enter multiple messages and see them all at once.
+
+---
+
+## Educational Value
+This demo serves as a reference for:
+
+Understanding Angular's new local change detection model with signals
+
+Building applications without zone.js
+
+Using signals as the only source of state
+
+Incorporating RxJS Observables alongside signal-based state for events
